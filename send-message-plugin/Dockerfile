@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM --platform=linux/amd64 alpine:3.16 as base
 
 RUN apk add --no-cache curl jq
 RUN apk add openssl
@@ -12,5 +12,6 @@ ARG MSG_TYPE
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+RUN echo "👷🏻 Executing Lark Send Message Plugin..."
+# ENTRYPOINT ["/entrypoint.sh"]
+CMD ["sh", "-c", "/entrypoint.sh"]

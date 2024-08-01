@@ -31,6 +31,7 @@ result=$(curl -s -X POST "https://open.larksuite.com/open-apis/im/v1/messages?re
 }')
 
 # Check the exit code of the curl command
+echo $result
 if [ $? -eq 0 ]; then
   echo "✅ Success! Message sent."
 else
