@@ -11,7 +11,7 @@ response=$(curl -s -X POST \
 
 # Extract access token using jq
 ACCESS_TOKEN=$(echo "$response" | jq -r '.app_access_token')
-echo "✅ Access Token received $ACCESS_TOKEN"
+echo "✅ Access Token received"
 
 # Generate UUID
 uuid=$(openssl rand -hex 16)
