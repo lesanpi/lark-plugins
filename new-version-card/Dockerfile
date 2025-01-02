@@ -7,8 +7,8 @@ ARG APP_ID
 ARG APP_SECRET
 ARG RECEIVE_ID_TYPE
 ARG RECEIVE_ID
-ARG CONTENT
-ARG MSG_TYPE
+ARG VERSION
+ARG LINK
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
