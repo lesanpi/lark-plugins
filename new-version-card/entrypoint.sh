@@ -20,7 +20,7 @@ echo "🔐 UUID Generated $uuid"
 echo "💬 Send to type: $RECEIVE_ID_TYPE"
 echo "📭 Receive ID: $RECEIVE_ID"
 
-CONTENT='{\n  \"config\": {\n    \"wide_screen_mode\": true\n  },\n  \"elements\": [\n    {\n      \"tag\": \"markdown\",\n      \"content\": \"New version released. Review the release note [click here]('$LINK'), <at id=all></at>\"\n    }\n  ],\n  \"header\": {\n    \"template\": \"green\",\n    \"title\": {\n      \"content\": \"New Version Released '$VERSION'\",\n      \"tag\": \"plain_text\"\n    }\n  }\n}'
+CONTENT='{\n  \"config\": {\n    \"wide_screen_mode\": true\n  },\n  \"elements\": [\n    {\n      \"tag\": \"markdown\",\n      \"content\": \"New version released. Review the release note [click here]('$LINK'), <at id=all></at>\"\n    }\n  ],\n  \"header\": {\n    \"template\": \"green\",\n    \"title\": {\n      \"content\": \"New Version Released '$VERSION' for '$REPOSITORY_NAME'\",\n      \"tag\": \"plain_text\"\n    }\n  }\n}'
 result=$(curl -s -X POST "https://open.larksuite.com/open-apis/im/v1/messages?receive_id_type=$RECEIVE_ID_TYPE" \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer '"$ACCESS_TOKEN"'' \
